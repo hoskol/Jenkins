@@ -1,9 +1,37 @@
 pipeline {
-    agent { docker { image 'maven:3.9.9-eclipse-temurin-21-alpine' } }
+    agent any
+
     stages {
-        stage('build') {
+        stage('Checkout SCM') {
             steps {
-                sh 'mvn --version'
+                // This checks out the code from the Git repository
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // This runs the Maven build
+                sh 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // This runs the Maven tests
+                sh 'mvn test'
+            }
+        }
+
+        stage('Deliver') {
+            steps {
+                echo 'Delivering the application...'
+            }
+        }
+
+        stage('End') {
+            steps {
+                echo 'Pipeline finished successfully.'
             }
         }
     }
