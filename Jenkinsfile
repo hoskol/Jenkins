@@ -25,6 +25,12 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                echo 'Running tests... (simulated)'
+            }
+        }
+
         stage('End') {
             steps {
                 echo 'Pipeline finished successfully.'
