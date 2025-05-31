@@ -8,39 +8,26 @@ pipeline {
     stages {
         stage('Start') {
             steps {
-                echo 'Step 1: Starting the pipeline...'
-                echo 'Step 2: Initial checks...'
+                echo 'Starting the pipeline...'
             }
         }
 
         stage('Checkout SCM') {
             steps {
-                echo 'Step 1: Logging before checkout...'
+                echo 'Checking out code...'
                 checkout scm
-                echo 'Step 2: Finished checkout.'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Step 1: Cleaning workspace...'
-                echo 'Step 2: Building the project... (simulated)'
-                echo 'Step 3: Build artifacts created.'
+                echo 'Building the project... (simulated)'
             }
         }
-
-        stage('Test') {
-            steps {
-                echo 'Step 1: Running unit tests...'
-                echo 'Step 2: Checking test coverage...'
-            }
-        }
-
 
         stage('End') {
             steps {
-                echo 'Step 1: Pipeline finished successfully.'
-                echo 'Step 2: Sending notifications...'
+                echo 'Pipeline finished successfully.'
             }
         }
     }
