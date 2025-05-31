@@ -1,11 +1,13 @@
 pipeline {
     agent any
 
-    options {
-        skipDefaultCheckout()
-    }
-
     stages {
+        stage('Start') {
+            steps {
+                echo 'Starting the pipeline...'
+            }
+        }
+
         stage('Checkout SCM') {
             steps {
                 echo 'Checking out code...'
@@ -19,6 +21,17 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                echo 'Running tests... (simulated)'
+            }
+        }
+
+        stage('Deliver') {
+            steps {
+                echo 'Delivering the application... (simulated)'
+            }
+        }
 
         stage('End') {
             steps {
