@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout SCM') {
             steps {
-          
-          
+                echo 'Checking out code...'
+                checkout scm
             }
         }
 
@@ -21,6 +21,11 @@ pipeline {
             }
         }
 
+        stage('Deliver') {
+            steps {
+                echo 'Delivering the application... (simulated)'
+            }
+        }
 
         stage('End') {
             steps {
