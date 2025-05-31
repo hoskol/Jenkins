@@ -21,11 +21,6 @@ pipeline {
             }
         }
 
-        stage('Deliver') {
-            steps {
-                echo 'Delivering the application... (simulated)'
-            }
-        }
 
         stage('End') {
             steps {
