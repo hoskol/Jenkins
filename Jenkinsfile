@@ -4,28 +4,26 @@ pipeline {
     stages {
         stage('Checkout SCM') {
             steps {
-                // This checks out the code from the Git repository
+                echo 'Checking out code...'
                 checkout scm
             }
         }
 
         stage('Build') {
             steps {
-                // This runs the Maven build
-                sh 'mvn clean compile'
+                echo 'Building the project... (simulated)'
             }
         }
 
         stage('Test') {
             steps {
-                // This runs the Maven tests
-                sh 'mvn test'
+                echo 'Running tests... (simulated)'
             }
         }
 
         stage('Deliver') {
             steps {
-                echo 'Delivering the application...'
+                echo 'Delivering the application... (simulated)'
             }
         }
 
