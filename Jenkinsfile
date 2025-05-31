@@ -36,12 +36,6 @@ pipeline {
             }
         }
 
-        stage('Deliver') {
-            steps {
-                echo 'Step 1: Preparing delivery package...'
-                echo 'Step 2: Deploying to environment...'
-            }
-        }
 
         stage('End') {
             steps {
